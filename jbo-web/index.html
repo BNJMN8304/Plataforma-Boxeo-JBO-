@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boxeo JBO · Propuesta de rediseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+</svg>
+
+<!-- ===================== VISTA PÚBLICA ===================== -->
+<div class="view on" id="v-public">
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="#"><img class="logo-mark" alt="Boxeo JBO" src="img/logo-jbo.png"><div class="logo-txt">BOXEO <span>JBO</span></div></a>
+      <nav class="nav-links"><a href="#como">Cómo empezar</a><a href="#horarios">Horarios</a><a href="#planes">Planes</a><a href="#escuela">La escuela</a><a href="#sedes">Sedes</a></nav>
+      <div class="nav-cta">
+        <button class="btn btn-ghost" onclick="go('alumno')">Soy alumno</button>
+        <button class="btn btn-red" onclick="go('prueba')">Clase de prueba</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-photo" style="background-image:url('img/hero.webp')"></div>
+    <div class="wrap">
+      <div class="eyebrow">Boxeo · Disciplina · Superación</div>
+      <h1 class="display">Aprende a boxear <em>de verdad</em></h1>
+      <p class="lead">Clases guiadas para todos los niveles, desde tu primer golpe hasta el ring. Prueba una clase por $3.000.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-red" onclick="go('prueba')">Agendar clase de prueba <svg class="i"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn-ghost" href="#horarios">Ver horarios</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>24</b>clases por semana</div>
+        <div><b>2</b>sedes: Viña y Villa Alemana</div>
+        <div><b>KIDS</b>sábados 11:20</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="como">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="eyebrow">Cómo empezar</div><h2 class="display">Tres pasos y al ring</h2></div><p class="muted">Sin trámites largos. Agenda, paga y te esperamos con los guantes listos.</p></div>
+      <div class="steps">
+        <div class="card step rv"><div class="n">01</div><h3>Elige día y hora</h3><p class="muted">Escoge el horario que te acomode para tu clase de prueba.</p></div>
+        <div class="card step rv"><div class="n">02</div><h3>Paga $3.000</h3><p class="muted">Pagas en línea y tu cupo queda confirmado al instante.</p></div>
+        <div class="card step rv"><div class="n">03</div><h3>Ven a entrenar</h3><p class="muted">Llega 10 minutos antes con ropa deportiva. Nosotros ponemos el resto.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="horarios">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="eyebrow">Horarios</div><h2 class="display">Entrena cuando puedas</h2></div><p class="muted">Clases de lunes a sábado, en la mañana, la tarde y la noche. Cada sede tiene su horario.</p></div>
+      <div class="sched rv"><div class="sched-grid" id="sched"></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="escuela">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="eyebrow">La escuela</div><h2 class="display">Así se entrena en JBO</h2></div><p class="muted">Clases grupales, mixtas y guiadas. Desde lo básico hasta el ring, a tu ritmo.</p></div>
+      <div class="gal">
+        <div class="gi big rv" style="background-image:url('img/escuela-ring.webp')"><div class="gcap"><b>Boxeo recreativo</b><span>Condición física y técnica para todos los niveles</span></div></div>
+        <div class="gi rv" style="background-image:url('img/competitivo.webp')"><div class="gcap"><b>Boxeo competitivo</b><span>Rama que representa a la escuela en campeonatos</span></div></div>
+        <div class="gi rv" style="background-image:url('img/acondicionamiento.webp')"><div class="gcap"><b>Acondicionamiento</b><span>Fuerza, resistencia y flexibilidad</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="planes">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="eyebrow">Planes</div><h2 class="display">Elige tu plan</h2></div><p class="muted">Paga mes a mes, sin contratos.</p></div>
+      <div class="plans">
+        <div class="card plan rv"><b>Plan por días</b><div class="price">$23.000 <small>/ mes</small></div><ul><li><svg class="i"><use href="#i-check"/></svg>Lunes, miércoles y viernes</li><li><svg class="i"><use href="#i-check"/></svg>Lunes y miércoles</li><li><svg class="i"><use href="#i-check"/></svg>Martes y jueves</li><li><svg class="i"><use href="#i-check"/></svg>Martes y viernes</li></ul><p class="muted" style="font-size:13px">Eliges una combinación y un horario fijo.</p><button class="btn btn-ghost btn-block" onclick="go('prueba')">Empezar</button></div>
+        <div class="card plan feat rv"><span class="tag">Sin límites</span><b>Plan Full</b><div class="price">$27.000 <small>/ mes</small></div><ul><li><svg class="i"><use href="#i-check"/></svg>De lunes a sábado, en cualquier horario</li><li><svg class="i"><use href="#i-check"/></svg>Hasta 1 clase por día</li><li><svg class="i"><use href="#i-check"/></svg>Entrena en ambas sedes</li></ul><button class="btn btn-red btn-block" onclick="go('prueba')">Empezar</button></div>
+        <div class="card plan rv"><b>Sábados</b><div class="price">$17.000 <small>/ mes</small></div><ul><li><svg class="i"><use href="#i-check"/></svg>Todos los sábados del mes</li><li><svg class="i"><use href="#i-check"/></svg>De 10:00 a 11:15 hrs</li><li><svg class="i"><use href="#i-check"/></svg>Ideal si trabajas en la semana</li></ul><button class="btn btn-ghost btn-block" onclick="go('prueba')">Empezar</button></div>
+      </div>
+      <div class="card kids rv"><div><div class="eyebrow">JBO Kids</div><b>Boxeo formativo para niños</b><p class="muted">Desarrollo físico, mental y social a través del boxeo, de forma segura.</p></div><div class="kids-p"><div><span class="muted">Sábados Kids · 6 a 13 años</span><b>$17.000</b><span class="muted">Sábados 11:20</span></div><div><span class="muted">Kids Full · desde 10 años</span><b>$23.000</b><span class="muted">Lun y mié 17:00 + sáb 11:20</span></div></div></div>
+      <p class="note">Valores mensuales. Matrícula única de $5.000 al inscribirte.</p>
+    </div>
+  </section>
+
+  <section class="block" id="sedes">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="eyebrow">Sedes</div><h2 class="display">Dónde entrenamos</h2></div></div>
+      <div class="steps">
+        <div class="card step rv"><svg class="i" style="color:var(--red2)"><use href="#i-pin"/></svg><h3>Viña del Mar</h3><p class="muted">Von Schroeder #444 · Metro Miramar<br><a href="https://www.google.com/maps/search/?api=1&query=Von+Schroeder+444+Vi%C3%B1a+del+Mar" target="_blank" style="color:var(--red2)">Ver en Google Maps →</a></p></div>
+        <div class="card step rv"><svg class="i" style="color:var(--red2)"><use href="#i-pin"/></svg><h3>Villa Alemana</h3><p class="muted">Calle Venecia #449 · Paradero 10<br><a href="https://www.google.com/maps/search/?api=1&query=Calle+Venecia+449+Villa+Alemana" target="_blank" style="color:var(--red2)">Ver en Google Maps →</a></p></div>
+        <div class="card step rv"><svg class="i" style="color:var(--red2)"><use href="#i-wa"/></svg><h3>¿Dudas?</h3><p class="muted">Escríbenos por WhatsApp y te respondemos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="cta-band rv"><h2 class="display">Tu primera clase<br>te está esperando</h2><p class="muted">$3.000 · Sin compromiso · Todos los niveles</p><button class="btn btn-red" onclick="go('prueba')">Agendar ahora <svg class="i"><use href="#i-arrow"/></svg></button></div>
+    </div>
+  </section>
+
+  <footer><div class="wrap"><div class="logo"><img class="logo-mark" alt="Boxeo JBO" src="img/logo-jbo.png"><div class="logo-txt">BOXEO <span>JBO</span></div></div><div>Instagram · WhatsApp · Reglamento</div><div>© 2026 Escuela de Boxeo JBO</div></div></footer>
+</div>
+
+<!-- ===================== CLASE DE PRUEBA ===================== -->
+<div class="view" id="v-prueba">
+  <div class="flow"><div class="wrap">
+    <div class="flow-top"><button class="back" onclick="tBack()"><svg class="i"><use href="#i-back"/></svg>Volver</button><div class="logo"><img class="logo-mark" alt="Boxeo JBO" src="img/logo-jbo.png"></div></div>
+    <div class="progress" id="tprog"><span class="on"></span><span></span><span></span></div>
+
+    <div class="stepv on" data-t="1">
+      <div class="eyebrow">Paso 1 de 3</div>
+      <h1 class="display">Elige tu clase</h1>
+      <p class="sub">Escoge la sede, el día y la hora de tu clase de prueba.</p>
+      <label class="field"><span>Sede</span><select><option>Viña del Mar · Von Schroeder #444</option><option>Villa Alemana · Calle Venecia #449</option></select></label>
+      <div class="label">Día</div>
+      <div class="days" id="tdays"></div>
+      <div class="label">Hora</div>
+      <div class="times" id="ttimes"></div>
+      <div class="sticky-foot"><button class="btn btn-red btn-block" onclick="tNext()">Continuar</button></div>
+    </div>
+
+    <div class="stepv" data-t="2">
+      <div class="eyebrow">Paso 2 de 3</div>
+      <h1 class="display">Tus datos</h1>
+      <p class="sub">Solo lo necesario para reservar tu cupo.</p>
+      <div class="row2"><label class="field"><span>Nombre</span><input placeholder="Benjamín"></label><label class="field"><span>Apellido</span><input placeholder="Vilches"></label></div>
+      <label class="field"><span>WhatsApp</span><input inputmode="tel" placeholder="+56 9 1234 5678"><small>Te enviaremos la confirmación y un recordatorio.</small></label>
+      <label class="field"><span>Correo</span><input type="email" placeholder="tu@correo.cl"></label>
+      <div class="card summary"><div class="sum-row"><span class="muted">Clase de prueba</span><span id="tsum">Lun 9:00</span></div><div class="sum-row total"><span>Total</span><span>$3.000</span></div></div>
+      <div class="sticky-foot"><button class="btn btn-red btn-block" onclick="tNext()">Ir a pagar $3.000</button></div>
+    </div>
+
+    <div class="stepv" data-t="3">
+      <div class="eyebrow">Paso 3 de 3</div>
+      <h1 class="display">Pago</h1>
+      <p class="sub">Elige cómo quieres pagar.</p>
+      <div class="pm" id="tpm">
+        <button class="pm-opt on" data-pm="mp"><div class="radio"></div><div><b>Pagar en línea</b><small>Débito, crédito o Mercado Pago · confirmación inmediata</small></div><span class="badge-f2">FASE 2</span></button>
+        <button class="pm-opt" data-pm="tr"><div class="radio"></div><div><b>Transferencia</b><small>Transfieres y subes tu comprobante</small></div></button>
+      </div>
+      <div class="card bank" id="tbank">
+        <div class="bank-row"><span>Banco</span><b>Banco ejemplo</b></div>
+        <div class="bank-row"><span>Tipo</span><b>Cuenta Vista</b></div>
+        <div class="bank-row"><span>N° de cuenta</span><b>000 000 000</b></div>
+        <div class="bank-row"><span>Titular</span><b>Nombre titular</b></div>
+        <div class="bank-row"><span>RUT</span><b>00.000.000-0</b></div>
+        <button class="copy" style="margin-top:10px"><svg class="i" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar todos los datos</button>
+        <div class="drop"><svg class="i"><use href="#i-up"/></svg><br><b>Sube tu comprobante</b><br>Arrastra una imagen o PDF, o toca para elegir</div>
+      </div>
+      <div class="sticky-foot"><button class="btn btn-red btn-block" onclick="tNext()">Confirmar y pagar $3.000</button></div>
+    </div>
+
+    <div class="stepv" data-t="4">
+      <div class="success">
+        <div class="big"><svg class="i"><use href="#i-check"/></svg></div>
+        <div class="eyebrow">Reserva confirmada</div>
+        <h1 class="display" style="margin:10px 0">¡Nos vemos en el ring!</h1>
+        <p class="sub" id="tok">Tu clase de prueba quedó agendada.</p>
+        <div class="card summary" style="text-align:left">
+          <div class="sum-row"><span class="muted">Qué traer</span><span>Ropa deportiva y agua</span></div><div class="sum-row"><span class="muted">Más adelante</span><span>Guantes 14 oz, vendas y bucal</span></div>
+          <div class="sum-row"><span class="muted">Llega</span><span>10 min antes</span></div>
+          <div class="sum-row"><span class="muted">Recordatorio</span><span>Por WhatsApp, 1 día antes</span></div>
+        </div>
+        <div style="display:grid;gap:10px;margin-top:24px"><button class="btn btn-red" onclick="go('public')">Volver al inicio</button><button class="btn btn-ghost"><svg class="i"><use href="#i-cal"/></svg>Agregar a mi calendario</button></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ===================== PANEL ALUMNO ===================== -->
+<div class="view" id="v-alumno">
+  <div class="app">
+    <aside class="side">
+      <div class="logo"><img class="logo-mark" alt="Boxeo JBO" src="img/logo-jbo.png"><div class="logo-txt">BOXEO <span>JBO</span></div></div>
+      <nav>
+        <a class="on" href="#"><svg class="i"><use href="#i-home"/></svg>Inicio</a>
+        <a href="#" onclick="go('pago');return false"><svg class="i"><use href="#i-card"/></svg>Pagos</a>
+        <a href="#"><svg class="i"><use href="#i-cal"/></svg>Mis clases</a>
+        <a href="#reglamento"><svg class="i"><use href="#i-book"/></svg>Reglamento</a>
+        <a href="#"><svg class="i"><use href="#i-user"/></svg>Mi cuenta</a>
+      </nav>
+      <div class="me"><div class="avatar">BV</div><div><b>Benjamín Vilches</b><small>Lun · Mié · Vie</small></div><svg class="i" style="margin-left:auto;color:var(--dim)"><use href="#i-out"/></svg></div>
+    </aside>
+
+    <main class="main">
+      <div class="mtop"><div class="logo"><img class="logo-mark" alt="Boxeo JBO" src="img/logo-jbo.png"><div class="logo-txt">BOXEO <span>JBO</span></div></div><div class="avatar">BV</div></div>
+      <div class="greet"><div><div class="eyebrow">Panel de alumno</div><h1 class="display">Hola, Benjamín</h1></div><span class="chip chip-green"><svg class="i" style="width:14px;height:14px"><use href="#i-check"/></svg>Alumno activo</span></div>
+
+      <div class="grid-d">
+        <div class="card status">
+          <div class="muted" style="font-size:14px;font-weight:500">Tu mensualidad</div>
+          <div class="big">Al día</div>
+          <div class="muted">Plan por días · Lunes, miércoles y viernes · 9:00</div>
+          <div class="bar"><i></i></div>
+          <div class="bar-meta"><span>Pagado el 5 sep</span><span><b style="color:var(--text)">12 días</b> para renovar</span></div>
+          <button class="btn btn-red" onclick="go('pago')">Pagar próximo mes <svg class="i"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div class="card next">
+          <h3>Próximas clases <a href="#">Ver todas</a></h3>
+          <div class="cls"><div class="date"><span>Mié</span><b>30</b></div><div><b>Boxeo · 9:00</b><small>Viña del Mar · 75 min</small></div></div>
+          <div class="cls"><div class="date"><span>Vie</span><b>2</b></div><div><b>Boxeo · 9:00</b><small>Viña del Mar · 75 min</small></div></div>
+          <div class="cls"><div class="date"><span>Lun</span><b>5</b></div><div><b>Boxeo · 9:00</b><small>Viña del Mar · 75 min</small></div></div>
+        </div>
+      </div>
+
+      <div class="quick">
+        <a class="card q" href="#" onclick="go('pago');return false"><div class="ic"><svg class="i"><use href="#i-card"/></svg></div><div><b>Pagar</b><small>Mensualidad</small></div></a>
+        <a class="card q" href="#"><div class="ic"><svg class="i"><use href="#i-cal"/></svg></div><div><b>Cambiar horario</b><small>Según cupos</small></div></a>
+        <a class="card q" href="#reglamento"><div class="ic"><svg class="i"><use href="#i-book"/></svg></div><div><b>Reglamento</b><small>13 normas</small></div></a>
+        <a class="card q" href="#"><div class="ic"><svg class="i"><use href="#i-wa"/></svg></div><div><b>Contacto</b><small>WhatsApp</small></div></a>
+      </div>
+
+      <div class="card panel">
+        <h3>Historial de pagos <a href="#">Descargar</a></h3>
+        <table class="hist">
+          <tr><td>Septiembre 2026</td><td class="muted">Lun, Mié y Vie · $23.000</td><td><span class="chip chip-green">Confirmado</span></td></tr>
+          <tr><td>Agosto 2026</td><td class="muted">Lun, Mié y Vie + matrícula · $28.000</td><td><span class="chip chip-green">Confirmado</span></td></tr>
+          <tr><td>Julio 2026</td><td class="muted">Clase de prueba · $3.000</td><td><span class="chip chip-green">Confirmado</span></td></tr>
+        </table>
+      </div>
+
+      <div class="card panel" id="reglamento">
+        <h3>Reglamento</h3>
+        <ol class="rules">
+          <li>Respeto por entrenadores, compañeros y el espacio. La escuela puede cancelar tu matrícula si no se cumple.</li>
+          <li>Sigue siempre las instrucciones del profesor a cargo.</li>
+          <li>No hacer sparring fuera de actividades supervisadas.</li>
+          <li>Sacos, peras y ring solo con autorización del profesor.</li>
+          <li>Sé puntual. ¡No llegues tarde!</li>
+          <li>No usar las instalaciones fuera del horario de clases.</li>
+          <li>Cuida las instalaciones y el equipo como si fueran tuyos.</li>
+          <li>Deja tus cosas en las repisas destinadas para ello.</li>
+          <li>Asiste con ropa deportiva e implementos en buen estado.</li>
+          <li>Sin collares, anillos, aros, piercings ni uñas largas.</li>
+          <li>Mantén una buena higiene personal.</li>
+          <li>Bota la basura en su lugar. ¡No tires chicles al suelo!</li>
+        </ol>
+      </div>
+    </main>
+  </div>
+  <nav class="tabbar">
+    <a class="on" href="#"><svg class="i"><use href="#i-home"/></svg>Inicio</a>
+    <a href="#" onclick="go('pago');return false"><svg class="i"><use href="#i-card"/></svg>Pagos</a>
+    <a href="#"><svg class="i"><use href="#i-cal"/></svg>Clases</a>
+    <a href="#"><svg class="i"><use href="#i-user"/></svg>Cuenta</a>
+  </nav>
+</div>
+
+<!-- ===================== PAGAR MENSUALIDAD ===================== -->
+<div class="view" id="v-pago">
+  <div class="flow"><div class="wrap">
+    <div class="flow-top"><button class="back" onclick="go('alumno')"><svg class="i"><use href="#i-back"/></svg>Mi panel</button><div class="logo"><img class="logo-mark" alt="Boxeo JBO" src="img/logo-jbo.png"></div></div>
+    <div class="eyebrow">Mensualidad · Octubre 2026</div>
+    <h1 class="display">Paga tu mes</h1>
+    <p class="sub">Tu plan y horario ya vienen seleccionados. Cámbialos solo si lo necesitas.</p>
+
+    <div class="label">Plan</div>
+    <div class="planpick" id="plans">
+      <button class="pp on" data-p="23000" data-n="Plan por días" data-dh="1"><div class="radio"></div><div><b>Plan por días</b><small>2 o 3 días fijos · tu plan actual</small></div><span class="pr">$23.000</span></button>
+      <button class="pp" data-p="27000" data-n="Plan Full"><div class="radio"></div><div><b>Plan Full</b><small>Lunes a sábado, cualquier horario y sede</small></div><span class="pr">$27.000</span></button>
+      <button class="pp" data-p="17000" data-n="Plan Sábados"><div class="radio"></div><div><b>Sábados</b><small>Sábados de 10:00 a 11:15</small></div><span class="pr">$17.000</span></button>
+    </div>
+    <div class="row2" id="dh"><label class="field"><span>Días</span><select id="dsel"></select></label><label class="field"><span>Hora</span><select id="hsel"></select></label></div>
+
+    <div class="card summary">
+      <div class="sum-row"><span class="muted" id="pname">Plan por días</span><span id="pprice">$23.000</span></div>
+      <div class="sum-row"><span class="muted">Matrícula</span><span class="chip chip-gray">Ya pagada</span></div>
+      <div class="sum-row total"><span>Total a pagar</span><span id="ptotal">$23.000</span></div>
+    </div>
+
+    <div class="label">Método de pago</div>
+    <div class="pm" id="ppm">
+      <button class="pm-opt on" data-pm="mp"><div class="radio"></div><div><b>Pagar en línea</b><small>Se confirma automáticamente</small></div><span class="badge-f2">FASE 2</span></button>
+      <button class="pm-opt" data-pm="tr"><div class="radio"></div><div><b>Transferencia</b><small>Revisión manual del comprobante</small></div></button>
+    </div>
+    <div class="card bank" id="pbank">
+      <div class="bank-row"><span>Banco</span><b>Banco ejemplo</b></div>
+      <div class="bank-row"><span>N° de cuenta</span><b>000 000 000</b></div>
+      <div class="bank-row"><span>Titular</span><b>Nombre titular</b></div>
+      <div class="bank-row"><span>RUT</span><b>00.000.000-0</b></div>
+      <button class="copy" style="margin-top:10px"><svg class="i" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar todos los datos</button>
+      <div class="drop"><svg class="i"><use href="#i-up"/></svg><br><b>Sube tu comprobante</b><br>Imagen o PDF</div>
+    </div>
+    <label class="check"><input type="checkbox" checked><span>Acepto los <a href="#">términos y condiciones</a> y el reglamento de la escuela.</span></label>
+    <div class="sticky-foot"><button class="btn btn-red btn-block" onclick="go('alumno')" id="pbtn">Pagar $23.000</button></div>
+  </div></div>
+</div>
+
+<div class="demo" id="demo">
+  <button class="on" data-v="public">Sitio público</button>
+  <button data-v="prueba">Clase de prueba</button>
+  <button data-v="alumno">Panel alumno</button>
+  <button data-v="pago">Pagar mes</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
